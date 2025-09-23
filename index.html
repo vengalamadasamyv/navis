@@ -10,6 +10,11 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
   <style>
+
+    html {
+  scroll-behavior: smooth;
+}
+
     html, body {
       margin: 0;
       padding: 0;
@@ -164,7 +169,7 @@
     }
 
     /* ===== RESPONSIVE ===== */
-    @media(max-width: 450px) {
+    @media(max-width: 500px) {
       .navbar ul, .navbar .buttons {
         display: none;
       }
@@ -173,7 +178,7 @@
       }
       .navbar{
         justify-content: space-between;
-        width: 85vw;
+        width: 89vw;
       }
 
       .swiper-slide .subtitle{
@@ -382,6 +387,22 @@
       .card p {
         font-size: 0.9rem;
       }
+
+      .card1:hover{
+      background-size: 120% auto;
+      }
+
+      .card2:hover{
+      background-size: 120% auto;
+      }
+
+      .card3:hover{
+      background-size: 120% auto;
+      }
+
+      .card4:hover{
+      background-size: 120% auto;
+      }
     }
 
     /* solution starts here */
@@ -487,6 +508,7 @@
       .solutions-section {
         flex-direction: column;
         text-align: center;
+        margin-bottom: 10rem;
       }
 
       .solutions-text {
@@ -624,6 +646,10 @@
         grid-template-columns: 1fr;
       }
 
+      .empty{
+        display: none;
+      }
+
       .about-card {
         text-align: center;
       }
@@ -685,7 +711,7 @@
     /* Button */
     .btn {
       display: inline-block;
-      margin-top: 2rem;
+      /* margin-top: 2rem; */
       padding: 0.6rem 1.5rem;
       background: #111827;
       color: #fff;
@@ -863,7 +889,29 @@
       background: #0f172a;
       border-radius: 1rem;
       padding: 2rem;
+      overflow: hidden;
+      position: relative;
     }
+
+    .c1{
+      position: absolute;
+      bottom: -120px;
+      right: -40px;
+      padding: 7rem;
+      border-radius: 50%;
+      background-color: #f8f8f80d;
+    }
+
+
+    .c2{
+      position: absolute;
+      bottom: 20px;
+      right: 80px;
+      padding: 4rem;
+      border-radius: 50%;
+      background-color: #f8f8f80d;
+    }
+    
 
     .contact-info h3 {
       font-size: 1.4rem;
@@ -943,10 +991,10 @@
     }
 
     /* Button */
-    button {
-      background: #1fb6ff;
+    .contact-overlay > form button {
+      background: #0254EC;
       border: none;
-      color: #0d1117;
+      color: #fff;
       font-size: 1rem;
       font-weight: 600;
       padding: 0.9rem 2rem;
@@ -970,6 +1018,30 @@
     @media (max-width: 600px) {
       .form-row {
         grid-template-columns: 1fr;
+      }
+
+      .c1{
+        padding: 4rem;
+        right:-40px;
+        bottom:-90px;
+      }
+
+      .c2{
+        padding: 2rem;
+        right: 30px;
+        bottom: 10px;
+      }
+
+      section.contact{
+        background-size: 100%;
+      }
+
+      .contact-overlay{
+        margin-top: 2rem;
+      }
+
+      .contact-info{
+        padding: 1rem;
       }
     }
 
@@ -1040,7 +1112,7 @@
 
     /* Right Section - Navigation */
     .footer-right {
-      flex: 1 1 200px;
+      flex: 1 1 20px;
       display: flex;
       align-items: flex-end;
       justify-content: flex-end;
@@ -1084,6 +1156,10 @@
       .footer-right {
         justify-content: center;
       }
+
+      .social-icons{
+        justify-content: space-evenly;
+      }
     }
   </style>
 </head>
@@ -1093,7 +1169,7 @@
   <nav class="navbar" id="navbar">
     <div class="logo"><img src="./asset/logo.png" alt="Logo"></div>
     <ul>
-      <li><a href="#service">Solutions</a></li>
+      <li><a href="#solutions">Solutions</a></li>
       <li><a href="#about">About Us</a></li>
       <li><a href="#features">Features</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -1110,7 +1186,7 @@
   <!-- ===== SIDEBAR ===== -->
   <div class="sidebar" id="sidebar">
     <button class="close-btn" id="closeBtn">✖</button>
-    <a href="#service">Solutions</a>
+    <a href="#solutions">Solutions</a>
     <a href="#about">About Us</a>
     <a href="#features">Features</a>
     <a href="#contact">Contact</a>
@@ -1201,7 +1277,7 @@
   </section>
 
   <!-- solution starts here -->
-   <section class="solutions-section">
+   <section class="solutions-section" id="solutions">
   <!-- Left Content -->
   <div class="solutions-text">
     <span class="tag">Solutions</span>
@@ -1244,7 +1320,7 @@
 
 
 <!-- about starts here -->
- <section class="about">
+ <section class="about" id="about">
     <div class="subtitle">
       <button>About Us</button>
       <p>
@@ -1266,7 +1342,7 @@
           </p>
         </div>
         <div style="border-radius: 20px 20px 0 0; height: 100px;
-        background-color:#111827; margin-top: 20px;">
+        background-color:#111827; margin-top: 20px;" class="empty">
 
         </div>
       </div>
@@ -1274,7 +1350,7 @@
       <!-- Card 2 -->
        <div>
         <div style="border-radius: 0 0 20px 20px; height: 140px;
-        background-color:#111827; margin-bottom: 20px;">
+        background-color:#111827; margin-bottom: 20px;" class="empty">
 
         </div>
         <div class="about-card">
@@ -1298,7 +1374,7 @@
           </p>
         </div>
         <div style="border-radius: 20px 20px 0 0; height: 138px;
-        background-color:#111827; margin-top: 20px;">
+        background-color:#111827; margin-top: 20px;" class="empty">
 
         </div>
       </div>
@@ -1343,7 +1419,7 @@
   </section>
 
   <!-- features starts here -->
-   <section class="features">
+   <section class="features" id="features">
 
     <div class="feature-card">
       <div class="card-header">AI-Powered Threat Intelligence</div>
@@ -1436,18 +1512,20 @@
   </section>
 
   <!-- contact starts here -->
-  <section class="contact">
+  <section class="contact" id="contact">
     <!-- <IMG SRC="./asset/BOAT.png"> -->
   <div class="contact-overlay">
 
     <!-- Left Contact Info -->
     <div class="contact-info">
+      <div class="c1"></div>
+      <div class="c2"></div>
       <h3>Get in Touch</h3>
       <p>Reach out to us for inquiries, demos, or partnership opportunities.</p>
 
-      <div><i>📞</i> +91 80725 00478<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+91 81223 31401</div>
-      <div><i>✉️</i> sales@navisarca.com<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;customersupport@navisarca.com</div>
-      <div><i>📍</i> Corporate Office<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Necurity Solutions</div>
+      <div><i>📞</i> +91 80725 00478<br>+91 81223 31401</div>
+      <div><i>✉️</i> sales@navisarca.com<br>customersupport@navisarca.com</div>
+      <div><i>📍</i> Corporate Office<br>Security Solutions</div>
     </div>
 
     <!-- Right Contact Form -->
@@ -1477,7 +1555,7 @@
       <div>
         <label>Select Subject?</label>
         <div class="subjects">
-          <label><input type="radio" name="subject" checked> General Inquiry</label>
+          <label><input type="radio" name="subject" checked style="width: unset;"> General Inquiry</label>
           <label><input type="radio" name="subject"> Sales</label>
           <label><input type="radio" name="subject"> Support</label>
           <label><input type="radio" name="subject"> Partnership</label>
@@ -1515,12 +1593,11 @@
 
       <!-- Social Icons -->
       <div class="social-icons">
-        <a href="#">X</a>
-        <a href="#">in</a>
-        <a href="#">f</a>
-        <a href="#">▶</a>
-        <a href="#">O</a>
-        <a href="#">I</a>
+        <a href="#"><img src="./asset/x.png"></a>
+        <a href="#"><img src="./asset/li.png"></a>
+        <a href="#"><img src="./asset/f.png"></a>
+        <a href="#"><img src="./asset/y.png"></a>
+        <a href="#"><img src="./asset/i.png"></a>
       </div>
     </div>
 
