@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Navis Arca</title>
+   <link rel="icon" type="image/png" href="./asset/final.png">
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600&display=swap" rel="stylesheet">
   <!-- Swiper CSS -->
@@ -61,7 +62,7 @@
       transition: color 0.3s;
     }
     .navbar ul li a:hover {
-      color: #f9a825;
+      color: #1fb6ff;
     }
     .navbar .buttons {
       display: flex;
@@ -78,9 +79,9 @@
       transition: all 0.3s;
     }
     .navbar .buttons .btn:hover {
-      background: #f9a825;
-      border-color: #f9a825;
-      color: #000;
+      background: #0254EC;
+      border-color: #0254EC;
+      color: #fff;
     }
     .btn-blue {
       padding: 8px 16px;
@@ -138,7 +139,7 @@
       transition: color 0.3s;
     }
     .sidebar a:hover {
-      color: #f9a825;
+      color: #1fb6ff;
     }
     .sidebar .btn {
       margin-top: 20px;
@@ -188,6 +189,7 @@
       .swiper-slide{
         padding-left: 40px !important;
       }
+
     }
 
     @media screen and (min-width:451px) and (max-width:1024px){
@@ -347,9 +349,9 @@
     }
 
     .card3:hover{
-      background-image: url('./asset/h2.jpg');
+      background-image: url('./asset/h4.jpg');
             background-position: center;
-      background-size: fill;
+      background-size: cover;
     }
 
     .card3:hover > p{
@@ -361,9 +363,9 @@
     }
 
     .card4:hover{
-      background-image: url('./asset/h3.jpg');
+      background-image: url('./asset/h5.jpg');
             background-position: center;
-      background-size: fill;
+      background-size: cover;
     }
 
     .card4:hover > p{
@@ -378,6 +380,12 @@
     @media (max-width: 768px) {
       .section h2 {
         font-size: 1.6rem;
+      }
+
+      
+      .dob{
+        font-size: 16px;
+        font-weight: 700;
       }
 
       .card h3 {
@@ -690,10 +698,10 @@
     }
 
     .value h3 {
-      font-size: 1rem;
+      font-size: 26px;
       font-weight: 600;
       margin: 0 0 0.5rem;
-      color: #8b949e;
+      color: whitesmoke;
     }
 
     .value p {
@@ -795,8 +803,9 @@
       }
       .value {
         border-top: none;
-        border-top: 1px solid #fff;
+        border-top: 1px solid #ffffff62;
         padding-left: 1rem;
+        margin-bottom: 4rem;
       }
       .value:first-child {
         border-left: none;
@@ -1157,6 +1166,7 @@
       display: flex;
       gap: 2rem;
       flex-wrap: wrap;
+      justify-content: center;
     }
 
     .footer-links a {
@@ -1207,6 +1217,7 @@
       <li><a href="#solutions">Solutions</a></li>
       <li><a href="#about">About Us</a></li>
       <li><a href="#features">Features</a></li>
+      <li><a href="#">Blog</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="buttons">
@@ -1224,6 +1235,7 @@
     <a href="#solutions">Solutions</a>
     <a href="#about">About Us</a>
     <a href="#features">Features</a>
+    <a href="#">Blog</a>
     <a href="#contact">Contact</a>
     <button class="btn">Request Demo</button>
     <button class="btn-blue">Talk to Expert</button>
@@ -1236,9 +1248,13 @@
       <div class="swiper-slide" style="background-image:url('./asset/Section (1).jpg')">
         <div class="title">Your Fleet. Fortified.</div>
         <div class="subtitle">Maritime cybersecurity built exclusively for vessels, fleets, and operators. Designed to secure ships against modern threats, maintain compliance, and deliver complete visibility—even in low-connectivity environments.</div>
-        <button class="dob">Download Our Brochure<img src="./asset/download.png"></button>
+        <a href="./asset/final.png" download="Brochure.png" style="text-decoration: none;">
+  <button class="dob">
+    Download Our Brochure <img src="./asset/download.png" alt="Download">
+  </button>
+</a>
       </div>
-      <div class="swiper-slide" style="background-image:url('./asset/Section (2).jpg')">
+      <!-- <div class="swiper-slide" style="background-image:url('./asset/Section (2).jpg')">
         <div class="title">Your Fleet. Fortified.</div>
         <div class="subtitle">Maritime cybersecurity built exclusively for vessels, fleets, and operators. Designed to secure ships against modern threats, maintain compliance, and deliver complete visibility—even in low-connectivity environments.</div>
         <button class="dob">Download Our Brochure<img src="./asset/download.png"></button>
@@ -1267,7 +1283,7 @@
         <div class="title">Your Fleet. Fortified.</div>
         <div class="subtitle">Maritime cybersecurity built exclusively for vessels, fleets, and operators. Designed to secure ships against modern threats, maintain compliance, and deliver complete visibility—even in low-connectivity environments.</div>
         <button class="dob">Download Our Brochure<img src="./asset/download.png"></button>
-      </div>
+      </div> -->
     </div>
     <div class="swiper-pagination"></div>
   </div>
@@ -1639,10 +1655,11 @@
     <!-- Right Section -->
     <div class="footer-right">
       <div class="footer-links">
-        <a href="#">Solutions</a>
-        <a href="#">About Us</a>
-        <a href="#">Features</a>
-        <a href="#">Contact</a>
+        <a href="#solutions">Solutions</a>
+        <a href="#about">About Us</a>
+        <a href="#features">Features</a>
+        <a href="#">Blog</a>
+        <a href="#contact">Contact</a>
       </div>
     </div>
   </div>
@@ -1677,20 +1694,42 @@
     });
 
     // Sidebar toggle
-    const hamburger = document.getElementById("hamburger");
-    const sidebar = document.getElementById("sidebar");
-    const overlay = document.getElementById("overlay");
-    const closeBtn = document.getElementById("closeBtn");
 
-    function toggleSidebar() {
-      sidebar.classList.toggle("active");
-      overlay.classList.toggle("active");
-    }
-
-    hamburger.addEventListener("click", toggleSidebar);
-    closeBtn.addEventListener("click", toggleSidebar);
-    overlay.addEventListener("click", toggleSidebar);
   </script>
+
+  <script>
+  const hamburger = document.querySelector('.hamburger');
+  const sidebar = document.querySelector('.sidebar');
+  const overlay = document.querySelector('.overlay');
+  const closeBtn = document.querySelector('.close-btn');
+  const sidebarLinks = document.querySelectorAll('.sidebar a');
+
+  // Open sidebar
+  hamburger.addEventListener('click', () => {
+    sidebar.classList.add('active');
+    overlay.classList.add('active');
+  });
+
+  // Close sidebar
+  closeBtn.addEventListener('click', () => {
+    sidebar.classList.remove('active');
+    overlay.classList.remove('active');
+  });
+
+  overlay.addEventListener('click', () => {
+    sidebar.classList.remove('active');
+    overlay.classList.remove('active');
+  });
+
+  // ✅ Close sidebar when clicking any link
+  sidebarLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      sidebar.classList.remove('active');
+      overlay.classList.remove('active');
+    });
+  });
+</script>
+
 
 </body>
 </html>
